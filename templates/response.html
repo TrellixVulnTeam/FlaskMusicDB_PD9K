@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="/static/custom.css">
+    <title>Music DB</title>
+  </head>
+  <body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-sm navbar-dark ">
+      <div class="container-fluid">
+        <a class="navbar-brand music-text" href="#">
+          <img src="/static/music_logo.png" alt="" width="30" height="30" class="d-inline-block align-top">
+            MusicSearch
+        </a>
+      </div>
+    </nav>
+    <!-- search form block-->
+      <div class="px-5 row vertical-center">
+        <div class="result">
+          {% for result in response %}
+            <div class="card mb-2 result-card" id="result-card" style="width: 80rem;">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="result-image rounded-circle z-depth-2" src="/static/thumbnails/{{ result["thumbnail"] }}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ result["name"] }}</h4>
+                        <p class="card-text">{{ result["details"] }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!--  Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="/static/custom.js"></script>
+  </body>
+</html>

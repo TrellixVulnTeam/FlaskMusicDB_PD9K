@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="/static/custom.css">
+    <title>Music DB</title>
+  </head>
+  <body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-sm navbar-dark ">
+      <div class="container-fluid">
+        <a class="navbar-brand music-text" href="#">
+          <img src="/static/music_logo.png" alt="" width="30" height="30" class="d-inline-block align-top">
+            MusicSearch
+        </a>
+      </div>
+    </nav>
+    <!-- search form block-->
+      <div class="px-5 row vertical-center">
+        <div class="search">
+          <!--simple search form-->
+          <form class="simple-search form-horizontal" id="simple-search-fm" action="{{ url_for('wildcard_result') }}" method="POST">
+            <div class="form-group">
+              <div class="col-sm-6 basic-search-field">
+                <input type="text" class="form-control" id="wild-data" placeholder="Search Music" name="wild-data">
+              </div>
+            </div>
+            <div class="form-group submit-btn">
+              <div class="py-2 col-sm-10">
+                <button type="submit" class="btn btn-info">Search</button>
+              </div>
+            </div>
+            <div class = "switch-search">
+              <button class="btn btn-danger advanced-search-btn">Advanced-Search</button>
+            </div>
+          </form>
+          <!--advance search form-->
+          <form class="advanced-search form-horizontal">
+            <div class="form-group">
+              <div class="py-2 col-sm-6 basic-search-field">
+                <input type="text" class="form-control" id="pwd" placeholder="Song-Name" name="data">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="py-2 col-sm-6 basic-search-field">
+                <input type="text" class="form-control" id="pwd" placeholder="Artist-Name" name="data">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="py-2 col-sm-6 basic-search-field">
+                <input type="text" class="form-control" id="pwd" placeholder="Album-Name" name="data">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="py-2 col-sm-6 basic-search-field">
+                <input type="text" class="form-control" id="pwd" placeholder="Lyrics" name="data">
+              </div>
+            </div>
+            <div class="form-group submit-btn">
+              <div class="py-2 col-sm-10">
+                <button type="submit" class="btn btn-danger">Search</button>
+              </div>
+            </div>
+            <div class = "switch-search">
+              <button class="btn btn-info simple-search-btn">Simple-Search</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!--  Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/static/custom.js"></script>
+  </body>
+</html>
