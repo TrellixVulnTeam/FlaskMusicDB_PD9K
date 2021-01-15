@@ -41,25 +41,25 @@
             </div>
           </form>
           <!--advance search form-->
-          <form class="advanced-search form-horizontal">
+          <form class="advanced-search form-horizontal" action="{{ url_for('advanced_result') }}" method="POST">
             <div class="form-group">
               <div class="py-2 col-sm-6 basic-search-field">
-                <input type="text" class="form-control" id="pwd" placeholder="Song-Name" name="data">
+                <input type="text" class="form-control" id="song_name" placeholder="Song-Name" name="data">
               </div>
             </div>
             <div class="form-group">
               <div class="py-2 col-sm-6 basic-search-field">
-                <input type="text" class="form-control" id="pwd" placeholder="Artist-Name" name="data">
+                <input type="text" class="form-control" id="artist_name" placeholder="Artist-Name" name="data">
               </div>
             </div>
             <div class="form-group">
               <div class="py-2 col-sm-6 basic-search-field">
-                <input type="text" class="form-control" id="pwd" placeholder="Album-Name" name="data">
+                <input type="text" class="form-control" id="album_name" placeholder="Album-Name" name="data">
               </div>
             </div>
             <div class="form-group">
               <div class="py-2 col-sm-6 basic-search-field">
-                <input type="text" class="form-control" id="pwd" placeholder="Lyrics" name="data">
+                <input type="text" class="form-control" id="lyrics" placeholder="Lyrics" name="data">
               </div>
             </div>
             <div class="form-group submit-btn">
